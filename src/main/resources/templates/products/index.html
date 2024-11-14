@@ -32,13 +32,12 @@
                     <td th:text="${product.name}"></td>
                     <td th:text="${product.brand}"></td>
                     <td th:text="${product.category}"></td>
-                    <td th:text="@{${product.price} +_'$'}"></td>
-                    <td><img th:src="${product.imageFileName}" style="width: 100px; height: 100px;"></td>
-                    <!-- <td><img th:src="@{'/images/' + ${product.imageFileName}}" style="width: 100px; height: 100px;"></td> -->
+                    <td th:text="@{${product.price} + '$'}"></td>
+                    <td><img th:src="@{'/images/' + ${product.imageFileName}}" style="width: 100px; height: 100px;"></td>
                     <td th:text="${product.createdAt.toString().substring(0, 10)}"></td>
                     <td style="white-space: nowrap;">
-                        <a class="btn btn-info" th:href="@{'/products/edit/' + ${product.id}}">Edit</a>
-                        <a class="btn btn-danger" th:href="@{'/products/delete/' + ${product.id}}">Delete</a>
+                        <a class="btn btn-info" th:href="@{'/products/edit?id=' + ${product.id}}">Edit</a>
+                        <a class="btn btn-danger" th:href="@{'/products/delete?id=' + ${product.id}}">Delete</a>
                     </td>
                 </tr>
             </tbody>
